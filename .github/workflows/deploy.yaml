@@ -51,4 +51,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S systemctl restart nginx
+            echo '${{ secrets.PASSWORD }}' | sudo -S systemctl restart nginx
