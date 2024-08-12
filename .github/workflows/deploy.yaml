@@ -1,4 +1,3 @@
-# GitHub Actions Docs: https://docs.github.com/en/actions
 
 on:
   push:
