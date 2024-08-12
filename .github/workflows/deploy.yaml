@@ -41,3 +41,14 @@ jobs:
           port: ${{ secrets.PORT }}
           source: "build/*"
           target: "/var/www/findmybmw"
+
+
+      - name: Restart Nginx
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S systemctl restart nginx
